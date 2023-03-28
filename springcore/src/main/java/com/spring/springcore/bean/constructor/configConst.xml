@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<bean class="com.spring.springcore.constructor.Certif" name="cer" c:name="Jain"/>
+	
+	<bean class = "com.spring.springcore.constructor.Student" name="student1">
+		<constructor-arg value="1"/>
+		<constructor-arg value="Priyanka"/>
+		<constructor-arg ref="cer"/>
+	</bean>
+	
+	<!--  we can also change the position of which variable to define by using the index field
+		  the indexing starts from one. if  we use index="1" for value 12, then inside of going to 
+		  first variable (a) in constructor, it will go to the second(b)-->
+	<bean class="com.spring.springcore.constructor.Ambiguity" name="ambiguity1">
+		<constructor-arg value="12" type="int" index="1"/>
+		<constructor-arg value="23" type="int"/>
+	</bean>
+	
+</beans>

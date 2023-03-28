@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/util
+	http://www.springframework.org/schema/util/spring-util.xsd">
+	
+	
+	
+	<!--  just another way of using collection list as a separate bean, called standalone Collection -->
+	<!--  
+		<util:list list-class="java.util.ArrayList" id="standAloneList">
+			<value>1233</value>
+			<value>1234</value>
+		</util:list>
+	 -->
+	 <!--  and now we can just use this ID as a reference when we declare our list type field in bean -->
+ 
+ 
+ 
+	<bean class ="com.spring.springcore.model.Student" name="student1">
+		<property name="name" value="Priyanka"/>
+		<property name ="studentId" value="1"/>
+		<property name="address" value="gotten"/>
+	</bean>
+	
+	<bean class="com.spring.springcore.model.Student" name="student2" p:name="Sanyam" p:studentId="2" p:address="shotten"/>
+	
+	<bean class="com.spring.springcore.model.Student" name="student3" p:name="Vani" p:studentId="3" p:address="rotten">
+		<property name="marks">
+			<list>
+				<value>100</value>
+				<value>99</value>
+				<value>98</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean class="com.spring.springcore.model.Student" name="student4" p:name="Vasu" p:studentId="4" p:address="motten">
+		<property name="marks">
+			<list>
+				<value>100</value>
+				<value>99</value>
+				<value>98</value>
+			</list>
+		</property>
+		<property name="subjects">
+			<map>
+				<entry key="1" value="Maths"/>
+				<entry key="2" value="English"/>
+				<entry key="3" value="Science"/>
+			</map>
+		</property>
+	</bean>
+	
+</beans>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/website</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hbm2ddl.auto">create</property>
+		<property name="show_sql">true</property>
+		
+		<mapping class="com.spring.hibernate.Student"/>
+		<mapping class="com.spring.hibernate.Questions"/>
+		<mapping class="com.spring.hibernate.Answers"/>
+		<mapping class="com.spring.hibernate.Many2OneAnswer"/>
+		<mapping class="com.spring.hibernate.One2ManyQuestion"/>
+		<mapping class="com.spring.hibernate.Many2ManyEmp"/>
+		<mapping class="com.spring.hibernate.Many2ManyProj"/>
+		
+		<mapping resource="com/spring/hibernate/Person.hbm.xml"/>
+		
+	</session-factory>
+
+</hibernate-configuration>
